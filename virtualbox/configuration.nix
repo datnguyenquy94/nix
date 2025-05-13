@@ -106,20 +106,29 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	unstable.windsurf
-	gnome-keyring
-	nodejs_23
-	vscode
-	firefox
-	sublime-merge
-	zed-editor
+    # shell
+    docker
+    wget
+    curl
+    ncdu
+    gnome-keyring
+    unzip
+
+    # Dev
+    nodejs_23
 	python311
 	go
-	unzip
 
-	nodePackages."@expo/ngrok"
+	# IDE
+	unstable.windsurf
+	vscode
+	sublime-merge
+	zed-editor
+
+	# Common apps
+	firefox
   ];
-  
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
